@@ -1,25 +1,23 @@
 ---
-import Showcase from '../assets/hiw.svg'
-const features = ['Find your tutor', 'Choose your subject', 'Start learning']
+import Showcase from '../assets/iphone-mockup.png'
+const features = ['Suba una imagen', 'Indique los datos del fallecido', 'Publique la esquela']
 ---
 
 
 <section class="product-defined">
     <div class="container">
          <div class="row product-brief-items">
-            <div class="brief-media center one-half column">
-                <img src={Showcase} alt="Showcase mockup">
+            <div class="brief-media center one-half">
+                <img class="mockup-img" src={Showcase} height="400" alt="Showcase mockup">
             </div>
-            <div class="brief-tab one-half column">
-                <h3 class="h1-title">Spark growth and engagement</h3>
-                <p class="m-paragraph m-margin">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+            <div class="brief-tab one-half">
+                <h3 class="h1-title">¿Cómo funciona?</h3>
+                <p class="m-paragraph m-margin">A través de un panel de administración podrás gestionar tus esquelas visibles, crear nuevas, despublicar esquelas...</p>
                 <ol class="ro">
                     {features.map((el, index) => (
                         <li><span>{index + 1}</span> <span>{el}</span></li>
                     ))}
                 </ol>
-                <br>
-                <a href="https://github.com/LaB-CH3/astrobrew" class="button button-primary lg">Register for free</a>
             </div>
            
         </div>
@@ -33,10 +31,11 @@ const features = ['Find your tutor', 'Choose your subject', 'Start learning']
 
 .product-defined{ 
     padding: 120px 20px; 
-    .brief-media img{
+    .brief-media {
       width: 100%;
-     
+      overflow: hidden;
     }
+
     .product-brief-items{
         display: flex;
         align-items: center;
@@ -66,6 +65,12 @@ const features = ['Find your tutor', 'Choose your subject', 'Start learning']
           
            
         }
+    }
+
+    .mockup-img {
+        object-fit: contain;
+        height: 400px;
+        transform: scale(1.5) translate(0, 80px);
     }
 
     @media (max-width: 700px) {
